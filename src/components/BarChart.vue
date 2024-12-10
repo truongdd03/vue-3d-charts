@@ -7,12 +7,10 @@
         :z-limit="data.length"
       />
       <Grid3D
-        :x-limit="safeGetMatrixWidth(data)"
+        :x-limit="data.length"
         :y-limit="safeGetMaxValInMatrix(data)"
-        :z-limit="data.length"
-        :x-label="xLabel"
-        :y-label="yLabel"
-        :z-label="zLabel"
+        :z-limit="safeGetMatrixWidth(data)"
+        :config="config"
       />
     </TresCanvas>
   </div>
@@ -20,29 +18,23 @@
 
 <script setup lang="ts">
 import { TresCanvas } from '@tresjs/core';
-import Grid3D from './shared/Grid3D.vue';
+import Grid3D from './shared/Grid3D/Grid3D.vue';
 import MyCamera from './shared/MyCamera.vue';
 import { safeGetMatrixWidth, safeGetMaxValInMatrix } from '@/utils/utils';
+import type { ChartConfig } from '@/types/types';
+import type { PropType } from 'vue';
 
 defineProps({
   data: {
     type: Array<Array<number>>,
     required: true,
   },
-  xLabel: {
-    type: String,
+  config: {
+    type: Object as PropType<ChartConfig>,
     required: false,
-    default: '',
-  },
-  yLabel: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  zLabel: {
-    type: String,
-    required: false,
-    default: '',
+    default() {
+      return { color: 'black' };
+    },
   },
 });
 </script>
