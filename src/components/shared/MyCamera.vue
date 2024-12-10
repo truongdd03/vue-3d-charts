@@ -1,11 +1,25 @@
 <template>
   <TresPerspectiveCamera
-    :position="[3, 3, 3]"
-    :look-at="[0, 0, 0]"
+    :position="[-5, yLimit, -5]"
   />
-  <OrbitControls />
+  <OrbitControls :target="[xLimit / 2, yLimit / 2, zLimit / 2]" />
 </template>
 
 <script setup lang="ts">
 import { OrbitControls } from '@tresjs/cientos';
+
+defineProps({
+  xLimit: {
+    type: Number,
+    required: true,
+  },
+  yLimit: {
+    type: Number,
+    required: true,
+  },
+  zLimit: {
+    type: Number,
+    required: true,
+  },
+});
 </script>

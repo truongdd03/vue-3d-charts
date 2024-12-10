@@ -1,13 +1,15 @@
 <template>
-  <Chart3D
-    :type="ChartType.Bar"
+  <BarChart
     :data="data"
+    style="width: 100vw; height: 100vh;"
+    x-label="Season"
+    y-label="Mean Temperature"
+    z-label="Time Period"
   />
 </template>
 
 <script setup lang="ts">
-import Chart3D from './components/Chart3D.vue';
-import { ChartType } from './types/types';
+import BarChart from './components/BarChart.vue';
 
 const data = [
   [5, 2, 4, 6, 2],
