@@ -1,20 +1,57 @@
 # vue-3d-charts
 
-This template should help get you started developing with Vue 3 in Vite.
+**WARNING: Work In Progress!!!**
 
-## Recommended IDE Setup
+3D chart library written in Vue 3 and TresJS.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Supported Charts:
+- [Bar Chart](#bar-chart)
+- Line Chart (Todo)
+- Heatmap (Todo)
+- Pie Chart (Todo)
 
-## Type Support for `.vue` Imports in TS
+## Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Todo
 
-## Customize configuration
+## Getting Started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Bar Chart
 
-## Project Setup
+```vue
+<template>
+  <BarChart
+    :data="data"
+    :config="config"
+    style="width: 100vw; height: 100vh;"
+  />
+</template>
+
+<script setup lang="ts">
+import BarChart from './components/BarChart.vue';
+import type { ChartConfig } from './types/types';
+
+const data = [
+  [5, 2, 4, 6, 2],
+  [9, 2, 3, 1, 3],
+  [5, 5, 3, 1, 1],
+  [4, 2, 5, 1, 7],
+];
+
+const config: ChartConfig = {
+  labels: {
+    x: 'Season',
+    y: 'Mean Temperature',
+    z: 'Time Period',
+    color: 'red',
+  }
+};
+</script>
+```
+
+<img width="398" alt="Screenshot 2024-12-10 at 7 33 45 PM" src="https://github.com/user-attachments/assets/eb0fcae0-7fcc-47b3-993b-426ea343a5ba">
+
+## For Developers
 
 ```sh
 npm install
