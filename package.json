@@ -1,8 +1,19 @@
 {
   "name": "vue-3d-charts",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/vue-3d-charts.umd.js",
+  "module": "./dist/vue-3d-charts.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-3d-charts.es.js",
+      "require": "./dist/vue-3d-charts.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -32,6 +43,7 @@
     "tailwindcss": "^3.4.16",
     "typescript": "~5.6.3",
     "vite": "^6.0.1",
+    "vite-plugin-dts": "^4.3.0",
     "vite-plugin-vue-devtools": "^7.6.5",
     "vue-tsc": "^2.1.10"
   }
