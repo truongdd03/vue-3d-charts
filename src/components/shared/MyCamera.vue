@@ -3,6 +3,7 @@
     :position="[-5, yLimit, -5]"
   />
   <OrbitControls :target="[xLimit / 2, yLimit / 2, zLimit / 2]" />
+  <TresAmbientLight />
 </template>
 
 <script setup lang="ts">
