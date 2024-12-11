@@ -1,9 +1,24 @@
 <template>
-  <BarChart
-    :data="data"
-    :config="config"
-    style="width: 100vw; height: 100vh;"
-  />
+  <div class="flex">
+    <div
+      style="width: 50vw; height: 100vh"
+    >
+      <BarChart
+        :data="data"
+        :config="config"
+        style="width: 50vw; height: 100vh;"
+      />
+    </div>
+    <div
+      style="width: 50vw; height: 100vh"
+    >
+      <BarChart
+        :data="data"
+        :config="config"
+        style="width: 50vw; height: 100vh;"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
