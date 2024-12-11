@@ -12,7 +12,9 @@ Supported Charts:
 
 ## Installation
 
-Todo
+```bash
+npm i vue-3d-charts
+```
 
 ## Getting Started
 
