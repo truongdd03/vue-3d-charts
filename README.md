@@ -30,8 +30,7 @@ npm i vue-3d-charts
 </template>
 
 <script setup lang="ts">
-import BarChart from './components/BarChart.vue';
-import type { ChartConfig } from './types/types';
+import { BarChart, type ChartConfig } from 'vue-3d-charts';
 
 const data = [
   [5, 2, 4, 6, 2],
@@ -46,12 +45,14 @@ const config: ChartConfig = {
     y: 'Mean Temperature',
     z: 'Time Period',
     color: 'red',
-  }
+  },
+  autoRotate: true,
 };
 </script>
 ```
 
-<img width="398" alt="Screenshot 2024-12-10 at 7 33 45 PM" src="https://github.com/user-attachments/assets/eb0fcae0-7fcc-47b3-993b-426ea343a5ba">
+![bar-chart](https://github.com/user-attachments/assets/f584b3ea-f182-4b36-97c3-028735b64fb5)
+
 
 ## For Developers
 
