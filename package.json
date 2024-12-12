@@ -24,7 +24,8 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "lint-check": "eslint . --ignore-pattern .gitignore"
   },
   "dependencies": {
     "@tresjs/cientos": "^4.0.3",
