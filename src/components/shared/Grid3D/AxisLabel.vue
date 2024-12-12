@@ -1,20 +1,22 @@
 <template>
-  <Suspense
-    v-for="x in limit + 1"
-    :key="x"
-  >
-    <Text3D
-      :font="fontPath"
-      :text="`${axis == 'y' ? x : x - 1}`"
-      :size="0.2"
-      :bevel-enabled="false"
-      :rotation="getRotation()"
-      :position="getPosition(axis == 'y' ? x : x - 1, 0.3)"
-      :height="0.01"
+  <template v-if="axis != 'y'">
+    <Suspense
+      v-for="x in limit + 1"
+      :key="x"
     >
-      <TresMeshBasicMaterial :color="color" />
-    </Text3D>
-  </Suspense>
+      <Text3D
+        :font="fontPath"
+        :text="`${x - 1}`"
+        :size="0.2"
+        :bevel-enabled="false"
+        :rotation="getRotation()"
+        :position="getPosition(x - 1, 0.3)"
+        :height="0.01"
+      >
+        <TresMeshBasicMaterial :color="color" />
+      </Text3D>
+    </Suspense>
+  </template>
   <Suspense v-if="title">
     <Text3D
       :font="fontPath"
@@ -57,6 +59,14 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  yMin: {
+    type: Number,
+    default: 0,
+  },
+  scalingFactor: {
+    type: Number,
+    default: 1,
+  },
 });
 
 const getPosition = (offset: number, spacing: number) => {
@@ -73,6 +83,7 @@ const getPosition = (offset: number, spacing: number) => {
 };
 
 const getRotation = () => {
+  console.log(props.yMin);
   switch (props.axis) {
     case 'x':
       return [Math.PI * 0.5, Math.PI, 0];

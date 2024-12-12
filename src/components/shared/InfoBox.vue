@@ -1,6 +1,6 @@
 <template>
   <p
-    class="relative bg-black text-white p-2 inline-block rounded"
+    class="relative bg-black text-white p-2 inline-block rounded select-none"
     :style="{ left: `${mousePos.x + 15}px`, top: `${mousePos.y - 20}px` }"
   >
     {{ text }}

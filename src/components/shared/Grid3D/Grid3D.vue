@@ -35,6 +35,8 @@
     :title="config.labels.y"
     :limit="yLimit"
     :x-limit="xLimit"
+    :min-y="yMin"
+    :scaling-factor="scalingFactor"
   />
 
   <!-- z-Labels -->
@@ -63,6 +65,14 @@ defineProps({
     required: true,
   },
   zLimit: {
+    type: Number,
+    required: true,
+  },
+  yMin: {
+    type: Number,
+    required: true,
+  },
+  scalingFactor: {
     type: Number,
     required: true,
   },

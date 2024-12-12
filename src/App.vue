@@ -13,8 +13,8 @@
       style="width: 50vw; height: 100vh"
     >
       <BarChart
-        :data="data"
-        :config="config"
+        :data="data1"
+        :config="config1"
         style="width: 50vw; height: 100vh;"
       />
     </div>
@@ -32,6 +32,13 @@ const data = [
   [4, 2, 5, 1, 7],
 ];
 
+const data1 = [
+  [0.5, 0.2, 0.4, 0.6, 0.2],
+  [0.9, 0.2, 0.3, 0.1, 0.3],
+  [0.5, 0.1, 0.3, 0.1, 0.1],
+  [0.4, 0.2, 0.5, 0.1, 0.7],
+];
+
 const config: ChartConfig = {
   labels: {
     x: 'Season',
@@ -39,5 +46,15 @@ const config: ChartConfig = {
     z: 'Time Period',
     color: 'red',
   }
+};
+
+const config1: ChartConfig = {
+  labels: {
+    x: 'Season',
+    y: 'Mean Temperature',
+    z: 'Time Period',
+    color: 'red',
+  },
+  autoRotate: true,
 };
 </script>

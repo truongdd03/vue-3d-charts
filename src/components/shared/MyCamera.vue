@@ -2,7 +2,10 @@
   <TresPerspectiveCamera
     :position="[-5, yLimit, -5]"
   />
-  <OrbitControls :target="[xLimit / 2, yLimit / 2, zLimit / 2]" />
+  <OrbitControls
+    :target="[xLimit / 2, yLimit / 2, zLimit / 2]"
+    :auto-rotate="autoRotate"
+  />
   <TresAmbientLight />
 </template>
 
@@ -22,5 +25,9 @@ defineProps({
     type: Number,
     required: true,
   },
+  autoRotate: {
+    type: Boolean,
+    default: false,
+  }
 });
 </script>

@@ -8,5 +8,6 @@ export interface ChartConfig {
     y?: string,
     z?: string,
     color?: string,
-  }
+  },
+  autoRotate?: boolean,
 }
