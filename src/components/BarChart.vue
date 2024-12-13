@@ -34,7 +34,7 @@
             e.stopPropagation();
           }"
           @pointer-leave="(e) => {
-            barColors[i][j] = getBarColor(getScaledValue(cell, minValue, scalingFactor), 10, 'red');
+            barColors[i][j] = getBarColor(getScaledValue(cell, minValue, scalingFactor), 10, config.labels.color || 'red');
             hoveringIndex = null;
           }"
         >
@@ -80,7 +80,7 @@ const props = defineProps({
     type: Object as PropType<ChartConfig>,
     required: false,
     default() {
-      return { color: 'black' };
+      return {};
     },
   },
   style: {
@@ -100,7 +100,7 @@ onBeforeMount(() => {
   props.data.forEach((row, i) => {
     barColors.value.push([]);
     row.forEach((cell) => {
-      barColors.value[i].push(getBarColor(getScaledValue(cell, minValue.value, scalingFactor.value), 10, 'red'));
+      barColors.value[i].push(getBarColor(getScaledValue(cell, minValue.value, scalingFactor.value), 10, props.config.labels.color || 'red'));
     });
   });
 });

@@ -22,30 +22,35 @@
   <!-- x-Labels -->
   <AxisLabel
     axis="x"
-    :color="config.labels.color!"
+    :color="config.labels.color || 'red'"
     :title="config.labels.x"
+    :data-labels="config.labels.xData"
     :limit="xLimit"
     :x-limit="xLimit"
+    :hide-ticks="config.labels.hideXTicks"
   />
 
   <!-- y-Labels -->
   <AxisLabel
     axis="y"
-    :color="config.labels.color!"
+    :color="config.labels.color || 'red'"
     :title="config.labels.y"
     :limit="yLimit"
     :x-limit="xLimit"
-    :min-y="yMin"
+    :y-min="yMin"
     :scaling-factor="scalingFactor"
+    :hide-ticks="true"
   />
 
   <!-- z-Labels -->
   <AxisLabel
     axis="z"
-    :color="config.labels.color!"
+    :color="config.labels.color || 'red'"
     :title="config.labels.z"
+    :data-labels="config.labels.zData"
     :limit="zLimit"
     :x-limit="xLimit"
+    :hide-ticks="config.labels.hideZTicks"
   />
 </template>
 

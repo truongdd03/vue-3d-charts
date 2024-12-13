@@ -44,7 +44,9 @@ const config: ChartConfig = {
     x: 'Season',
     y: 'Mean Temperature',
     z: 'Time Period',
-    color: 'red',
+    color: 'orange',
+    xData: ['Spring', 'Summer', 'Fall', 'Winter'],
+    hideXTicks: true,
   }
 };
 
@@ -53,7 +55,6 @@ const config1: ChartConfig = {
     x: 'Season',
     y: 'Mean Temperature',
     z: 'Time Period',
-    color: 'red',
   },
   autoRotate: true,
 };
