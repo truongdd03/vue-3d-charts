@@ -49,14 +49,16 @@ const config: ChartConfig = {
     x: 'Season',
     y: 'Mean Temperature',
     z: 'Time Period',
-    color: 'red',
+    color: 'orange',
+    xData: ['Spring', 'Summer', 'Fall', 'Winter'],
+    hideXTicks: true,
   },
   autoRotate: true,
 };
 </script>
 ```
 
-![bar-chart](https://github.com/user-attachments/assets/f584b3ea-f182-4b36-97c3-028735b64fb5)
+![bar-chart](https://github.com/user-attachments/assets/0dfcb6ed-18b4-4df2-a669-67a92f2ab067)
 
 
 ## For Developers
